@@ -1,0 +1,30 @@
+  {% extends "base_generic.html" %}
+
+  {% block title %}<title>Add Venue</title>{% endblock title %}
+  {% load static %}
+
+
+  {% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/venue_styles1.css' %}">
+  {% endblock %}
+
+  {% block content %}
+  <h2>Fill up the following details we will contact you Shortly</h2>
+  <br>
+  {% if submitted %}
+  <p class="success">
+     Your Request is submitted successfully. We will contact you Shortly <br><br> Thank you.
+   </p>
+ {% else %}
+   <form action="" method="post" novalidate>
+   <table>
+     {{ form.as_table }}
+     <tr>
+       <td>&nbsp;</td>
+       <td><input type="submit" value="Submit"></td>
+     </tr>
+   </table>
+   {% csrf_token %}
+   </form>
+ {% endif %}
+ {% endblock content %}

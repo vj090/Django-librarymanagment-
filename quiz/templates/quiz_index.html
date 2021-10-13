@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+  <h3>Welcome {{ user.get_username }} test your knowledge here</h3>
+  <br>
+  <b><a href="{% url 'quiz:questions' %}"> start </a></b>
+
+  {% else %}
+  <h2>Start Random quiz</h2>
+  <a href="{% url 'quiz:questions' %}"> start </a>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: azure;
+}
+
+label {
+    margin: 10px;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    margin: 5px;
+}
+
+form {
+    border: 3px solid;
+    background-color: cadetblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    background-color: blanchedalmond;
+    margin: 12px;
+    padding: 6px;
+}

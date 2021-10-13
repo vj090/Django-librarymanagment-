@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Author List:</h1>
+<table class="table table-dark table-sm">
+    <tr>
+        <th>Author Name</th>
+    </tr>
+    {% for author in all_author %}
+    <tr>
+        <td><a href="{{ author.get_absolute_url }}">{{ author }}</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+

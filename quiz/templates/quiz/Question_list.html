@@ -1,0 +1,32 @@
+<!DOCYTPE html>
+<html>
+<head>
+    <title>Question's</title>
+    {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/question_list.css' %}">
+</head>
+
+<body>
+<form action="{% url 'quiz:quiz-result' %}" method="post">
+    {% csrf_token %}
+    <center><h1>Online Quiz System</h1></center>
+    <center><h2>MCQ Base Test</h2></center>
+        <ul>
+        {% for question in all_question %}
+        <li>{{ forloop.counter }} {{ question }}</li>
+        <ul>
+            {% for choice in question.set_choices.all %}
+            <input type="radio" name="{{question}}" id="choice {{ forloop.counter }}}"
+                   value={{ choice.id }}></input>
+            <lable>{{ choice }}</lable>
+            <br>
+            {% endfor %}
+        </ul>
+            <hr>
+        <br>
+        {% endfor %}
+    </ul>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

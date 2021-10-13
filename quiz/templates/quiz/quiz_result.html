@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+  <h2>Thank you {{ user.get_username }} for participating </h2>
+  <h5>Your Score {{ score }}</h5>
+  <h5>Num _init {{ num_init }}</h5>
+
+<h5>Session-->{{num_visits}}</h5>
+  <br>
+  <br>
+  <h4>Download the Answer sheet here</h4>
+  <a href="/quiz/csv">Download</a>
+
+  {% else %}
+  <h2>Thank you for participating in Library Quiz </h2>
+  <h3>Click here to be a permanent member</h3>
+  <h5>Your Score {{ score }}</h5>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login_page.css' %}">
+        {% comment %} <link rel="stylesheet" href="catalog/static/css/login.css"> {% endcomment %}
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Admin Site log-in</h1>
+        <form method="post">
+            <lable>Name:</lable>
+            <input type=text placeholder="Enter user name" name="user_name" required>
+            <lable>Password</lable>
+            <input type="Password" placeholder="Enter Password" name="password" required>
+            <button type="submit" value="submit">Submit</button>
+            <button type="button" class="cancelbtn"> Cancel</button>
+        </form>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
