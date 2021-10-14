@@ -3,18 +3,21 @@
 <body>
 
   <script>
-    function showPrimes(n) {
-  nextPrime: for (let i = 2; i < n; i++) {
+      let user = {
+      name: "John",
+      sizes: {
+        height: 182,
+        width: 50
+      }
+    };
 
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue nextPrime;
-    }
+    let clone = Object.assign({}, user);
 
-    alert( i ); // a prime
-  }
-}
-let num = prompt()
+    alert( user.sizes === clone.sizes ); // true, same object
 
+    // user and clone share sizes
+    user.sizes.width++;       // change a property from one place
+    alert(clone.sizes.width); // 51, see the result from the other one
   </script>
 
 </body>
